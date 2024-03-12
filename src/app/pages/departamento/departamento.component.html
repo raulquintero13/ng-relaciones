@@ -1,0 +1,59 @@
+<div>
+
+  <div class="row mb-4">
+
+    <h1>Departamentos</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div>{{departamento | json}}</div>
+      <h3>Detalle del departamento</h3>
+
+
+      <div class="content-box">
+
+        <div>Id: <span class="info">{{departamento.idDepartamento}}</span></div>
+        <div>Departamento: <span class="info">{{departamento.nombre}}</span></div>
+        <div>Direccion: <span class="info">{{departamento.direccion}}</span></div>
+        <div>Descripcion: <span class="info">{{departamento.descripcion}}</span></div>
+
+        <div class="mt-4">
+
+          <h3>Empleados</h3>
+          <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">nombre</th>
+                <th scope="col">apellido</th>
+                <th scope="col">edad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let empleado of departamento.empleados" class="">
+                <td scope="row">{{ empleado.idEmpleado }}</td>
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.edad}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+
+      </div>
+
+
+      <div class="mt-5">
+        <hr>
+        <!-- {{departamento.empleados | json}} -->
+      </div>
+
+
+    </div>
+  </div>
+</div>

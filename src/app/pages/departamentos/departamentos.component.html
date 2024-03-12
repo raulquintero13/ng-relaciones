@@ -1,0 +1,77 @@
+<div>
+
+  <div class="row mb-4">
+
+    <h1>Departamentos</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Listado</h3>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">nombre</th>
+              <th scope="col">empleados</th>
+              <th scope="col">descripcion</th>
+              <th scope="col">direccion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let departamento of departamentos" >
+              <td scope="row">{{departamento.idDepartamento}}</td>
+              <td>{{departamento.nombre}}</td>
+              <td>{{departamento.empleados?.length}}</td>
+              <td>{{departamento.descripcion}}</td>
+              <td>{{departamento.direccion}}</td>
+              <td><button class="btn btn-primary" (click)="ver(departamento.idDepartamento)">Ver</button></td>
+              <td><button class="btn btn-success" (click)="editar(departamento.idDepartamento)">Editar</button></td>
+              <td><button class="btn btn-danger" (click)="delete(departamento.idDepartamento)">Eliminar</button></td>
+            </tr>
+
+          </tbody>
+        </table>
+        <div>
+        </div>
+      </div>
+      <!-- {{departamentos |json}} -->
+
+    </div>
+    <div class="col-md-4">
+      <form (ngSubmit)="onSubmit()" role="form">
+        <fieldset class="form-group">
+          <legend>Crear Departamento</legend>
+          <div class="form-group">
+            <label class="sr-only" for="nombre">id:</label>
+            <input type="text" [(ngModel)]="departamento.idDepartamento" class="form-control" id="idDepartamento" disabled [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="nombre">Nombre:</label>
+            <input type="text" [(ngModel)]="departamento.nombre" class="form-control" id="nombre" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="descripcion">Descripcion:</label>
+            <input type="text" [(ngModel)]="departamento.descripcion" class="form-control" id="descripcion" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="direccion">Direccion:</label>
+            <input type="text" [(ngModel)]="departamento.direccion" class="form-control" id="direccion" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="mt-3">
+            <input type="submit" value="Grabar" class="btn btn-primary"> <input type="button" class="btn btn-secondary ms-3" value="Limpiar" (click)="limpiar()">
+          </div>
+        </fieldset>
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+</div>

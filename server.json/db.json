@@ -1,0 +1,88 @@
+{
+  "departamentos": [
+    {
+      "id": 1,
+      "nombre": "departamento1",
+      "direccion": "direccion 1",
+      "empleados": []
+    },
+    {
+      "id": 2,
+      "nombre": "departamento2",
+      "direccion": "direccion2",
+      "empleados": [
+        {
+          "id": 2,
+          "nombre": "juan",
+          "apellido": "perez",
+          "curp": "curp perez",
+          "rfc": "rfc juan",
+          "edad": 25,
+          "telefono": "68655555",
+          "correo": "perez@server",
+          "departamento": {
+            "id": 1,
+            "nombre": "departamento1",
+            "direccion": "direccion 1",
+            "empleados": []
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "dep333",
+      "direccion": "sdfsdfsd"
+    },
+    {
+      "id": 5,
+      "nombre": "dep34",
+      "direccion": "dircss"
+    }
+  ],
+  "empleados": [
+    {
+      "id": 2,
+      "nombre": "juan",
+      "apellido": "perez",
+      "curp": "curp perez",
+      "rfc": "rfc juan",
+      "edad": 25,
+      "telefono": "68655555",
+      "correo": "perez@server",
+      "departamento": {
+        "id": 1,
+        "nombre": "departamento1",
+        "direccion": "direccion 1",
+        "empleados": [
+          {
+            "id": 5,
+            "nombre": "mario",
+            "apellido": "perez",
+            "curp": "curp perez",
+            "rfc": "rfc juan",
+            "edad": 25,
+            "telefono": "68655555",
+            "correo": "perez@server"
+          },
+          {
+            "id": 6,
+            "nombre": "andres",
+            "apellido": "perez",
+            "curp": "curp perez",
+            "rfc": "rfc juan",
+            "edad": 25,
+            "telefono": "68655555",
+            "correo": "perez@server",
+            "departamento": {
+              "id": 1,
+              "nombre": "departamento1",
+              "direccion": "direccion 1",
+              "empleados": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
