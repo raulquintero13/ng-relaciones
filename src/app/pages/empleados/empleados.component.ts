@@ -27,10 +27,17 @@ export class EmpleadosComponent {
         console.log('departamentos', resp);
       }
     });
+
+
   }
 
   onSubmit(){
-
+    this.empleadosService.saveOrUpdate(this.empleado).subscribe({
+      next: resp=>{
+        console.log('empleado enviado', this.empleado);
+        this.getAllEmpleados()
+      }
+    })
   }
 
   limpiar(){
@@ -54,6 +61,9 @@ export class EmpleadosComponent {
     this.empleadosService.delete(id).subscribe({
       next: resp=>{
         this.getAllEmpleados();
+      },
+      error: resp=>{
+        console.log('delete error', resp)
       }
     })
   }

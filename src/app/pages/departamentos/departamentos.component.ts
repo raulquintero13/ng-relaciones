@@ -20,6 +20,7 @@ export class DepartamentosComponent implements OnInit{
   }
 
   onSubmit(){
+    console.log('depto enviado', this.departamento)
     this.departamentosService.saveOrUpdate(this.departamento).subscribe({
       next: resp=>{
         this.departamento = {"idDepartamento": 0} as Departamento;

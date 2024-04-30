@@ -25,7 +25,8 @@
               <td>{{empleado.apellido}}</td>
               <td>{{empleado.edad}}</td>
               <td>{{empleado.correo}}</td>
-              <td><button class="btn btn-danger" (click)="delete(empleado.idEmpleado)">Eliminar</button></td>
+              <td><button class="btn btn-warning" (click)="editar(empleado.idEmpleado)">Editar</button>
+                  <button class="btn btn-danger ms-2" (click)="delete(empleado.idEmpleado)">X</button></td>
             </tr>
 
           </tbody>
@@ -70,14 +71,18 @@
 
           <!-- No funciono con el Back que estuve haciendo pruebas -->
 
-          <!-- <select class="form-select" [(ngModel)]="empleado.departamento!.idDepartamento" id="formEmpleado" aria-label="Default select example">
-            <option selected>Seleccione un Departamento</option>
-            <option *ngFor="let d of departamentos" value="{{ d.idDepartamento }}">{{d.nombre}}</option>
-          </select> -->
+          <div class="form-group">
+            <label class="sr-only" for="correo">Departamento:</label>
+            <select class="form-select" [(ngModel)]="empleado.departamento" id="departamento" name="departamento" aria-label="Default select example">
+              <!-- <option selected>Seleccione un Departamento</option> -->
+              <option *ngFor="let d of departamentos" value="{{ d.idDepartamento }}">{{d.nombre}}</option>
+            </select>
+          </div>
 
 
           <div class="mt-3">
-            <input type="submit" value="Grabar" class="btn btn-primary"> <input type="button" class="btn btn-secondary ms-3" value="Limpiar" (click)="limpiar()">
+            <button type="submit" class="btn btn-primary">Grabar</button>
+            <button type="reset" class="btn btn-secondary ms-3" value="Limpiar" >Limpiar</button>
           </div>
         </fieldset>
       </form>
